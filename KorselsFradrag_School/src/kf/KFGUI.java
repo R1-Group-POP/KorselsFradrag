@@ -4,6 +4,9 @@
  */
 package kf;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  *
  * @author Patrick
@@ -68,6 +71,11 @@ public class KFGUI extends javax.swing.JFrame {
         setResizable(false);
 
         udregn.setText("Udregn");
+        udregn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                udregnActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Km");
 
@@ -110,6 +118,14 @@ public class KFGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void udregnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_udregnActionPerformed
+        double kroner;
+        kroner = KF.calculate(Integer.parseInt(km.getText()));
+        BigDecimal bd = BigDecimal.valueOf(kroner);
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        kr.setText(bd.toString());
+    }//GEN-LAST:event_udregnActionPerformed
 //
 //    /**
 //     * @param args the command line arguments
