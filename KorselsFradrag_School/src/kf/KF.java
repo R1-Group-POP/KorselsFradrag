@@ -14,7 +14,7 @@ public class KF {
     }
 
     public static double calculate(int kilometer) {
-        if (kilometer < 120) {
+        if (kilometer > 120) {
             return (kilometer - 24) * 1.05;
 
         } else if (kilometer > 24) {
