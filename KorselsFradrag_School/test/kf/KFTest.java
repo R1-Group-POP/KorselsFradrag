@@ -42,16 +42,19 @@ public class KFTest {
     @Test
     public void testCalculate() {
         System.out.println("calculate");
+        System.out.println("Scene 1");
         int kilometer = 10;
         double expResult = 0.0;
         double result = KF.calculate(kilometer);
         assertEquals(expResult, result, 0.0);
         
+        System.out.println("Scene 2");
         kilometer = 25;
-        expResult = 2.10;
+        expResult = 2.11;
         result = KF.calculate(kilometer);
         assertEquals(expResult, result, 0.0);
         
+        System.out.println("Scene 3");
         kilometer = 150;
         expResult = 132.3;
         result = KF.calculate(kilometer);
